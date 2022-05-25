@@ -54,8 +54,8 @@ function setResult(){
     const resultName = document.querySelector(".resultName");
     resultName.innerHTML = infoList[point].name;
 
-    let resultImg = document.createElement("img");
-    const imgDiv = document.querySelector("#resultImg");
+    let resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
     let imgURL = 'img/image-' + point + '.png';
     resultImg.src = imgURL;
     resultImg.alt = point;
