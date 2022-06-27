@@ -14,20 +14,20 @@
     </script>
 </head>
 <body>
-    <section id="main" class="my-5 py-5 px-4 mx-auto">
+    <section id = "main" class="my-5 py-5 px-4 mx-auto">
         <h1 class="jalan">나의 개발자 유형은?</h1>
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
-            <img src="./img/title_img.png" alt="title_img" class="img-fluid"/>
+            <img src="./img/title_img.png" alt="title_img" class="img-fluid" />
         </div>
         <p class="Gmarket mt-5">
-            멋쟁이사자처럼 프론트엔드 4번째 교육에서 제작한<br>
-            개발자 유형 테스트입니다.
+            멋쟁이사자처럼 프론트엔드 4번째 수업에서 개발한
+            개발자 유형테스트입니다.
             <br><br>
-            아래 시작하기 버튼을 눌러주세요
+            아래 시작하기 버튼을 누르세요.
         </p>
         <button type="button" class="startBtn btn" onclick="js:start()">시작하기</button>
     </section>
-    <section id="qna">
+    <section id = "qna">
         <div class="status mx-auto mt-5">
             <div class="countStatus">
 
@@ -36,15 +36,16 @@
 
             </div>
         </div>
-        <div class="qBox my-5 py-5 mx-auto">
-
+        <div class="qBox my-5 py-3 mx-auto">
+            
         </div>
+
         <div class="aBox">
 
         </div>
     </section>
-    <section id="result" class="mx-auto my-5 py-5 px-5">
-        <h2 class="jalan">나의 개발유형은?</h2>
+    <section id = "result" class="mx-auto my-5 py-5 px-4">
+        <h2 class="jalan">나의 결과는?!</h2>
         <div class="Gmarket">
             <div class="resultIntro">
 
@@ -52,63 +53,29 @@
             <div class="resultName">
 
             </div>
-        </div>
+            <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 mx-auto">
 
-        <div if="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 mx-auto">
-
-        </div>
-        <div class="resultDesc">
+            </div>
             <div class="resultDescTitle1">
 
             </div>
             <div class="resultDesc1">
                 
             </div>
+            
             <div class="resultDescTitle2">
 
             </div>
             <div class="resultDesc2">
                 
+            </div>
             
-        </div>
-        </div>
-            <a href="javascript:setShare()"><img src="./img/icon-kakao.png" title="카카오톡" class="charebtn_custom"/></a>
         </div>
     </section>
-    <script src="./js/mbti.js"></script>
+
+    
     <script src="./js/data.js"></script>
-    <script type="text/javascript">
-        function setShare(){
-            var resultImg = document.querySelector('#resultImg'); 
-            var resultAlt = resultImg.firstElementChild.alt; 
-            const shareTitle = '나의 개발자 유형은 무엇일까? 나의 개발자 유형을 확인해보고 공유해보자!!';
-            const shareDes=infoList[resultAlt].name;
-            
-            const shareImage= 'https://developermbtitest.netlify.app/' + 'img/title_img.png';
-            const shareURL = 'https://developermbtitest.netlify.app/';
-            Kakao.Link.sendDefault({
-                objectType: 'feed',
-                content: {
-                title: shareDes,
-                description: shareTitle,
-                imageUrl: shareImage,
-                link: {
-                    mobileWebUrl: shareURL,
-                    webUrl : shareURL,
-                },
-                },
-                buttons: [
-                {
-                    title: '결과 확인하기',
-                    link: {
-                    mobileWebUrl: shareURL,
-                    webUrl : shareURL
-                    },
-                },
-                ]
-            });
-        
-        }
-      </script>
+    <script src="./js/mbti.js"></script>
+    
 </body>
 </html>

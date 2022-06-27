@@ -2,6 +2,8 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 
+
+
 const endPoint = 10;
 
 const select = [0,0,0,0];
@@ -19,8 +21,8 @@ function addAnswer(answerText,qIdx,idx){
     a.appendChild(answer);
     answer.innerHTML = answerText;
 
-    answer.addEventListener("click",function(){
-        let children = document.querySelectorAll('.answerList');
+    answer.addEventListener("click",()=>{
+        let children = document.querySelectorAll('.answerList'); //이때 children은 어레이다.
         for(let i=0; i<children.length; i++){
             children[i].disabled = true; //버튼 비활성화
             children[i].style.WebkitAnimaion = "fadeOut 0.5s";
@@ -28,7 +30,7 @@ function addAnswer(answerText,qIdx,idx){
 
         }
         setTimeout(()=>{
-            let target = qnaList[qIdx].a[idx].type;
+            let target = qnaList[qIdx].a[idx].type; //click이벤트가 일어났을때 발생하는거라서 idx가 제대로 인식되는거임
             for(let i=0; i<target.length; i++){
                 select[target[i]] += 1;
             }
@@ -67,12 +69,12 @@ function setResult(){
     const resultDescTitle1 = document.querySelector(".resultDescTitle1");
     resultDescTitle1.innerHTML = infoList[point].descTitle1;
     resultDesc1.innerHTML = infoList[point].desc1;
-
+    
     const resultDesc2 = document.querySelector('.resultDesc2');
     const resultDescTitle2 = document.querySelector(".resultDescTitle2");
     resultDescTitle2.innerHTML = infoList[point].descTitle2;
     resultDesc2.innerHTML = infoList[point].desc2;
-
+    
 }
 
 function goResult(){
@@ -85,8 +87,6 @@ function goResult(){
             qna.style.display = "none";
             result.style.display = "block";
         },450);
-        let qIdx = 0;
-        goNext(qIdx);
     },450);
 
     setResult();
